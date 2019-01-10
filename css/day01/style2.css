@@ -1,0 +1,48 @@
+/* numbered paragraphs */
+h3 {
+    border-top: 1px solid gray;
+    clear:left;
+
+}
+#numbered p:first-child {counter-reset: mynum;}
+
+li {
+    list-style: lower-roman;
+    margin-bottom: 8px;
+}
+ul,#numbered {
+    border: 1em solid #69b;
+    padding-right:1em;
+    float:left;
+}
+body{
+    counter-reset: headnum;
+}
+h3::before{
+    content:'(' counter(headnum,upper-alpha) ')';
+    counter-increment: headnum;
+}
+
+#numbered p:before {
+    content: counter(mynum) ": ";
+    counter-increment: mynum;
+    font-weight: bold;
+}
+#parent-div{
+    clear:left;
+    position: relative;
+    font: bold 200% sans-serif;
+}
+#forward, #back {
+    position: absolute;
+    margin:0px; /* no margin around the elements */
+    top: 0px; /* distance from top */
+    left: 0px; /* distance from left */
+}
+#forward {
+    color: blue;
+}
+
+#back {
+    color: red;
+}

@@ -1,0 +1,9 @@
+p ~ ul{
+    color:red
+}
+#meau-bar ul ul{
+    display:none;
+}
+#meau-bar li:hover > ul{
+    display:block;
+}
